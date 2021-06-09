@@ -1,26 +1,18 @@
-// dependencies
 const express = require("express");
-const path = require("path");
 
-// Sets up the Express App
-// =============================================================
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
+// const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
-// express.static middleware
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-// Routes
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+// Use apiRoutes
+// app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
 
-app.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/notes.html"));
-});
-
-// Starts the server to begin listening
-// =============================================================
 app.listen(PORT, () => {
-  console.log(`App listening on PORT ${PORT}`);
+  console.log(`API server now on port ${PORT}!`);
 });
