@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const { createNewNote } = require("../../lib/notes");
-const { notes } = require("../../db/db");
+const notes = require("../../db/db");
 
 router.get("/notes", (req, res) => {
   let results = notes;
