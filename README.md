@@ -14,7 +14,7 @@ Below screenshots of some of the features for reference.
 
   ![Note Taker User Interface](public/assets/images/screenshots/01-note-taker-ui.jpg)
 
-- When the user clicks the "Get Started" button, it is directed to the notes page ;
+- When the user clicks the "Get Started" button, the user is directed to the notes page ;
 
   ![Notes Page](public/assets/images/screenshots/02-notes-page.jpg)
 
